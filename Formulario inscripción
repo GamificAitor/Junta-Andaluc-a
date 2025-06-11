@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Junta de Andalucía</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #006a4e; /* Verde corporativo de la Junta */
+        }
+        h2 {
+            text-align: center;
+            color: #006a4e;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+        .radio-group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #006a4e;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #004d38;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Formulario de Inscripción</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="dni_nie">DNI / NIE</label>
+                <input type="text" id="dni_nie" name="dni_nie" pattern="[0-9]{8}[A-Za-z]|[XYZ][0-9]{7}[A-Za-z]" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="provincia">Provincia</label>
+                <select id="provincia" name="provincia" required>
+                    <option value="">Seleccione una provincia</option>
+                    <option value="almeria">Almería</option>
+                    <option value="cadiz">Cádiz</option>
+                    <option value="cordoba">Córdoba</option>
+                    <option value="granada">Granada</option>
+                    <option value="huelva">Huelva</option>
+                    <option value="jaen">Jaén</option>
+                    <option value="malaga">Málaga</option>
+                    <option value="sevilla">Sevilla</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" name="edad" min="1" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Género</label>
+                <div class="radio-group">
+                    <label for="hombre"><input type="radio" id="hombre" name="genero" value="hombre"> Hombre</label>
+                    <label for="mujer"><input type="radio" id="mujer" name="genero" value="mujer"> Mujer</label>
+                    <label for="otro"><input type="radio" id="otro" name="genero" value="otro"> Otro</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="subsector">Subsector Turístico</label>
+                <select id="subsector" name="subsector" required>
+                    <option value="">Seleccione un subsector</option>
+                    <option value="alojamiento">Alojamiento y Hostelería</option>
+                    <option value="restauracion">Restauración y Gastronomía Turística</option>
+                    <option value="agencias">Agencias de Viaje y Turoperadores</option>
+                    <option value="transporte">Transporte Turístico</option>
+                    <option value="alquiler_vehiculos">Alquiler de Vehículos</option>
+                    <option value="ocio">Ocio, Actividades y Experiencias</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ocupacion">Ocupación Profesional</label>
+                <select id="ocupacion" name="ocupacion" required>
+                    <option value="">Seleccione una ocupación</option>
+                    <option value="emprendimiento">Emprendimiento (Autónomos y directivos)</option>
+                    <option value="marketing">Marketing Digital, Ventas y Redes Sociales</option>
+                    <option value="operaciones">Operaciones y Servicios</option>
+                    <option value="rrhh">Recursos Humanos</option>
+                    <option value="compras">Compras y aprovisionamientos</option>
+                    <option value="gestion">Gestión, contabilidad y finanzas (ERP)</option>
+                </select>
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+</html>
